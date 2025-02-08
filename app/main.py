@@ -2,19 +2,18 @@ import sys
 
 
 def main():
-    # Uncomment this block to pass the first stage
     while True:
         sys.stdout.write("$ ")
-    
-    # Wait for user input
-    #command = input()
-        user_input = input()
-    #print(f"{command}: command not found")
-    #main()
-        if user_input == "exit 0":
-            break
-        sys.stdout.write(f"{user_input}: not found\n")
-
+        sys.stdout.flush()
+        # Wait for user input
+        command = input()
+        command_and_params = command.split(" ")
+        if command_and_params[0] == "exit":
+            sys.exit(int(command_and_params[1]))
+        elif command_and_params[0] == "echo":
+            print(" ".join(command_and_params[1:]))
+        else:
+            print(f"{command}: not found")
 
 if __name__ == "__main__":
     main()
