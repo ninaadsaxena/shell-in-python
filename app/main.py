@@ -17,6 +17,8 @@ def main():
                 print(" ".join(command_and_params[1:]),"is a shell builtin")
             elif command_and_params[1] == "echo":
                 print(" ".join(command_and_params[1:]),"is a shell builtin")
+            elif command_and_params[1] == "type":
+                print(" ".join(command_and_params[1:]),"is a shell builtin")
             else:
                 print(f"{command}: not found")
         else:
