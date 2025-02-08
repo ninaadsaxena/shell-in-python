@@ -12,8 +12,11 @@ def main():
             sys.exit(int(command_and_params[1]))
         elif command_and_params[0] == "echo":
             print(" ".join(command_and_params[1:]))
+        elif command_and_params[0] == "type" and command_and_params[1] == "exit" or "echo":
+            print(" ".join(command_and_params[1:]),"is a shell builtin")
         else:
             print(f"{command}: not found")
+
 
 if __name__ == "__main__":
     main()
