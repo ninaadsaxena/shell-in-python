@@ -4,7 +4,6 @@ import sys
 def main():
     while True:
         sys.stdout.write("$ ")
-        sys.stdout.flush()
         # Wait for user input
         command = input()
         command_and_params = command.split(" ")
@@ -19,8 +18,8 @@ def main():
                 print(" ".join(command_and_params[1:]),"is a shell builtin")
             elif command_and_params[1] == "type":
                 print(" ".join(command_and_params[1:]),"is a shell builtin")
-            else:
-                print()
+            elif command_and_params[1] == "invalid":
+                print(" ".join(command_and_params[1:]),": not found")
         else:
             print(f"{command}: not found")
 
