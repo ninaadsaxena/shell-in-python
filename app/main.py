@@ -20,7 +20,7 @@ def main():
             elif command_and_params[1] == "type":
                 print(" ".join(command_and_params[1:]),"is a shell builtin")
             else:
-                print(f"{command}: not found")
+                print()
         else:
             print(f"{command}: not found")
 
