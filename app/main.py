@@ -1,5 +1,5 @@
 import sys
-
+import shutil
 
 def main():
     while True:
@@ -38,6 +38,8 @@ def main():
         match command.split():
             case ["type", arg] if arg in ["echo","exit","type"]:
                 print(f"{arg} is a shell builtin")
+            case ["type", arg] if path := shutil.which(command):
+                print(f"{command}" is "{path}") 
             case ["type", arg] if arg not in ["echo","exit","type"]:
                 print(f"{arg}: not found")
             case ["exit","0"]:
@@ -46,6 +48,7 @@ def main():
                 print(*args)
             case _:
                 print(f"{command}: command not found")
+
 
 
 
